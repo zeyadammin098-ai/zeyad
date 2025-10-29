@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brainwave.io</title>
+  <style>
+    :root {
+      --main-color: #4f46e5;
+      --text-color: #111;
+      --light-gray: #f9fafb;
+      --dark-bg: #0f172a;
+      --gray: #6b7280;
+      --white: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+      background: var(--white);
+    }
+
+    header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+    }
+
+    header .btn {
+      background: var(--main-color);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: var(--gray);
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .hero .btn-main {
+      background: var(--main-color);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hero img {
+      width: 70%;
+      margin-top: 50px;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Features */
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      padding: 60px 80px;
+      text-align: center;
+    }
+
+    .features div {
+      flex: 1;
+    }
+
+    .features h3 {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    .features p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* Section 2 */
+    .section2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 100px;
+      background: var(--light-gray);
+    }
+
+    .section2 .text {
+      flex: 1;
+    }
+
+    .section2 .text h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .section2 .text p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .section2 .text .btn-main {
+      background: var(--main-color);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .section2 img {
+      flex: 1;
+      width: 80%;
+    }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      padding: 50px 80px;
+    }
+
+    .stats div h2 {
+      color: var(--main-color);
+      font-size: 26px;
+    }
+
+    .stats div p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* Manage Projects */
+    .manage {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 100px;
+    }
+
+    .manage .text {
+      flex: 1;
+      padding-left: 40px;
+    }
+
+    .manage .text h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .manage .text ul {
+      list-style: none;
+    }
+
+    .manage .text ul li {
+      margin-bottom: 10px;
+      color: var(--gray);
+    }
+
+    .manage img {
+      flex: 1;
+      width: 80%;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      padding: 80px 100px;
+      background: var(--light-gray);
+    }
+
+    .testimonials .card {
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .testimonials img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    /* Pricing */
+    .pricing {
+      background: var(--dark-bg);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 100px;
+    }
+
+    .pricing h2 {
+      margin-bottom: 40px;
+    }
+
+    .pricing .plans {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .plan {
+      background: var(--white);
+      color: var(--text-color);
+      padding: 30px;
+      border-radius: 10px;
+      flex: 1;
+      max-width: 300px;
+    }
+
+    .plan h3 {
+      margin-bottom: 10px;
+    }
+
+    .plan h2 {
+      color: var(--main-color);
+      margin-bottom: 15px;
+    }
+
+    .plan a {
+      display: inline-block;
+      background: var(--main-color);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    /* FAQ Section */
+    .faq {
+      background: var(--dark-bg);
+      color: var(--white);
+      padding: 60px 100px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .faq div {
+      width: 45%;
+      margin-bottom: 20px;
+    }
+
+    .faq h4 {
+      color: var(--white);
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .faq p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--light-gray);
+      padding: 80px 100px;
+    }
+
+    footer .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--white);
+      padding: 40px 50px;
+      border-radius: 10px;
+      margin-bottom: 60px;
+    }
+
+    footer .top .text {
+      max-width: 500px;
+    }
+
+    footer .top .text h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: var(--text-color);
+    }
+
+    footer .top .text p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    footer .top .buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    footer .top .buttons a {
+      background: var(--main-color);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer .top .buttons a:nth-child(2) {
+      background: transparent;
+      color: var(--main-color);
+      border: 2px solid var(--main-color);
+    }
+
+    footer .bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    footer .bottom > div {
+      max-width: 400px;
+    }
+
+    footer .bottom h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    footer ul {
+      list-style: none;
+      color: var(--gray);
+    }
+
+    footer ul li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Eng.Zeyad</h2>
+    <nav>
+      <ul>
+        <li><a href="#">Demo</a></li>
+        <li><a href="#">Pages</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="btn">Get started free &LongRightArrow;</a>
+  </header>
+
+  <section class="hero">
+    <h1>Get things done by awesome remote team</h1>
+    <p>We share common trends and strategies for improving your remta income and making sure you stay in high demand.</p>
+    <a href="#" class="btn-main">Get started free &LongRightArrow;</a>
+    <br>
+    <img src="browser 01.png" alt="Hero Image">
+  </section>
+
+  <section class="features">
+    <div>
+      <img src="code.svg" alt="Project Management">
+      <h3>Project management</h3>
+      <p>With lots of unique blocks, you can easily build a page without coding. Build your next landing page easily.</p>
+    </div>
+    <div>
+      <img src="countdown-2.svg" alt="Time Tracking">
+      <h3>Time tracking</h3>
+      <p>With lots of unique blocks, you can easily build a page without coding. Build your next landing page easily.</p>
+    </div>
+    <div>
+      <img src="Shape.svg" alt="Mobile App">
+      <h3>Beautiful mobile app</h3>
+      <p>With lots of unique blocks, you can easily build a page without coding. Build your next landing page easily.</p>
+    </div>
+  </section>
+
+  <section class="section2">
+    <div class="text">
+      <h2>Getting started with Albino is easier than ever</h2>
+      <p>With lots of unique blocks, you can easily build a page without coding . build your next landing page so quickly with Albino</p>
+      <a href="#" class="btn-main">Get started free &LongRightArrow;</a>
+    </div>
+    <img src="Image.png" alt="Getting Started Image">
+  </section>
+
+  <section class="stats">
+    <div>
+      <h2>1M+</h2>
+      <p>Customers vist Albino every months</p>
+    </div>
+    <div>
+      <h2>93%</h2>
+      <p>Satisfaction rate from our coustomers</p>
+    </div>
+    <div>
+      <h2>4.9</h2>
+      <p>Average customer ratings out of 5.00!</p>
+    </div>
+  </section>
+
+  <section class="manage">
+    <img src="Image (1).png" alt="Manage Project">
+    <div class="text">
+      <h2>Manage your projects fast</h2>
+      <ul>
+        
+        
+           <ol type="1" start="1"> Create a project in seconds</ol>
+        
+    <ol>Assign related people easily</ol>
+        <ol>Make it done on time</ol>
+        
+      </ul>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="card">
+      <img src="Oval (1).png" alt="User 1">
+      <h1>"You made it so simple!"</h1>
+      <p>My site is so much faster and easier to work with than my old one.</p>
+      <h1>Zeyad Abdelhamed</h1>
+      <p>Founder at Zeyad</p>
+    </div>
+    <div class="card">
+      <img src="Oval.png" alt="User 2">
+      <h1>"Simply the best!"</h1>
+      <p>Better than all the rest. I'd recommend this product to beginners.</p>
+      <h1>Zeyad Abdelhamed</h1>
+      <p>Digital Marketer</p>
+    </div>
+  </section>
+
+  <section class="pricing">
+    <h2>Pricing & Plans</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Basic</h3>
+        <h2>$29</h2>
+        <p>Per user per month</p>
+        <a href="#">Get started free </a>
+      </div>
+      <div class="plan">
+        <h3>Standard</h3>
+        <h2>$49</h2>
+        <p>Per user per month</p>
+        <a href="#">Get started free </a>
+      </div>
+      <div class="plan">
+        <h3>Premium</h3>
+        <h2>$99</h2>
+        <p>Per user per month</p>
+        <a href="#">Get started free </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div>
+      <h4>Can I use Albino for my clients?</h4>
+      <p>Absolutely. You can use this design for personal and commercial projects with proper attribution.</p>
+    </div>
+    <div>
+      <h4>Does it work with WordPress?</h4>
+      <p>Yes, you can easily integrate with WordPress using page builders or import it as HTML.</p>
+    </div>
+    <div>
+      <h4>Do I get free updates?</h4>
+      <p>Yes, all future updates and improvements are included at no extra cost.</p>
+    </div>
+    <div>
+      <h4>Will you provide support?</h4>
+      <p>We provide dedicated support for all our users via email and live chat.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="top">
+      <div class="text">
+        <h2>Build better landing pages fast</h2>
+        <p>With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
+      </div>
+      <div class="buttons">
+        <a href="#">Get it now &LongRightArrow;</a>
+        <a href="#">Learn more &LongRightArrow;</a>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div>
+        <h1>Eng.Zeyad</h1>
+        <p>Build modern websites quickly and beautifully with pre-made sections and responsive blocks.</p>
+      </div>
+      <ul>
+        <li><strong>Company</strong></li>
+        <li>About us</li>
+        <li>Contact</li>
+        <li>Careers</li>
+        <li>Press</li>
+      </ul>
+      <ul>
+        <li><strong>Product</strong></li>
+        <li>Features</li>
+        <li>Pricing</li>
+        <li>News</li>
+        <li>Help desk</li>
+        <li>Support</li>
+      </ul>
+      <ul>
+        <li><strong>Services</strong></li>
+        <li>Digital Marketing</li>
+        <li>SEO for business</li>
+        <li>UI Design</li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
